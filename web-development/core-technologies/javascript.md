@@ -16,7 +16,7 @@ y = "Hello" // causes an error
 ```
 The value of `const` can't be changed through reassignment, and it can't be redeclared.
 `let` works like a normal variable declaration.
----
+
 #### Arrays
 ```javascript
 const pets = ['dog', 'cat']

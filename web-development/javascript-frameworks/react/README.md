@@ -15,7 +15,7 @@ React uses bable under the hood to convert JSX into regular JavaScript.
 Is a syntax extension to JavaScript. JSX produces React "Elements".
 
 #### Function Components
-The content of a React component (usually) needs to contain one root element, if not, it will throw an error.
+the simplest way to define a component is the following:
 ```javascript
 const App = () => {
   return (
@@ -25,6 +25,7 @@ const App = () => {
   )
 }
 ```
+The content of a React component (usually) needs to contain one root element, if not, it will throw an error.
 We can wrap it on a `<div>` or use what Ract calls [fragments](https://reactjs.org/docs/fragments.html#short-syntax) which look like this: `<> </>`.
 
 #### Props

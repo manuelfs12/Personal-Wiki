@@ -8,5 +8,5 @@ The programming language of the web.
 
 ## JavasScript Frameworks
 
-* React: is a JavaScript library for building user interfaces.
+* [React](../javascript-frameworks/react/README.md): is a JavaScript library for building user interfaces.
 

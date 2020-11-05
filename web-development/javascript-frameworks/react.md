@@ -56,19 +56,22 @@ There can be an arbitrary number of props and their values can be "hard coded" s
 
 #### Destructuring props
 
-We can use destructuring to assign variable names to props since _props_ is an object.
+We can use destructuring to assign variable names to props since `props` is an object.
 
 ```javascript
 const Component = (props) => {
-  const [name, age] = props // Instead of calling props.name or props.age, we can call name or age.
+  const [name, age] = props 
   // The rest of the component...
 }
+```
+Instead of calling `props.name` or `props.age`, we can call `name` or `age`.
 
+```javascript
 const AnotherComponent = ({name, age}) => {
-  // Here instead of asigning the entire props object, we assign the values of the properties 
-  // directly to variables by destructuring the props object that is passed to the component function as a parameter.
+  // Component...
 }
 ```
+Another way is to assign the values of the properties directly to variables by destructuring the `props` object that is passed to the component function as a parameter.
 
 ### Component helper functions
 

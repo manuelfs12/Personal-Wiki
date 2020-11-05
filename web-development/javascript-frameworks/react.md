@@ -37,7 +37,7 @@ function Example(props) {
 }
 ```
 
-The content of a React component \(usually\) needs to contain one root element, if not, it will throw an error. We can wrap it on a `<div>` or use what Ract calls [fragments](https://reactjs.org/docs/fragments.html#short-syntax) which look like this: `<> </>`.
+The content of a React component \(usually\) needs to contain one root element, if not, it will throw an error. We can wrap it on a `<div>` or use what React calls [fragments](https://reactjs.org/docs/fragments.html#short-syntax) which look like this: `<> </>`.
 
 ### Props
 
@@ -65,7 +65,8 @@ const Component = (props) => {
 }
 
 const AnotherComponent = ({name, age}) => {
-  // Here instead of asigning the entire props object, we assign the values of the properties directly to variables by destructuring the props object that is passed to the component function as a parameter
+  // Here instead of asigning the entire props object, we assign the values of the properties 
+  // directly to variables by destructuring the props object that is passed to the component function as a parameter.
 }
 ```
 
@@ -110,7 +111,8 @@ ReactDOM.render(
 )
 ```
 
-Example taken from [Fullstack Open.](https://fullstackopen.com/en/part1/component_state_event_handlers) in this example, `counter` variable is assigned to the initial value of the state. `setCounter` is assigned to the function that will be used to modify the state.
+Example taken from [Fullstack Open.](https://fullstackopen.com/en/part1/component_state_event_handlers)
+In this example, `counter` variable is assigned to the initial value of the state. `setCounter` is assigned to the function that will be used to modify the state.
 
 ## Resources
 

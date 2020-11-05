@@ -1,6 +1,8 @@
 # JavaScript Frameworks
 
-### Frontend
-* [React](react/README.md)
+## Frontend
+
+* [React](react.md)
 * Angular
 * Vue
+

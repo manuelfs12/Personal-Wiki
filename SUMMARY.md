@@ -6,5 +6,5 @@
     * [HTML and CSS](web-development/core-technologies/html-css.md)
     * [JavaScript](web-development/core-technologies/javascript.md)
   * [JavaScript Frameworks](web-development/javascript-frameworks/README.md)
-    * [React](web-development/javascript-frameworks/react/README.md)
+    * [React](web-development/javascript-frameworks/react.md)
 

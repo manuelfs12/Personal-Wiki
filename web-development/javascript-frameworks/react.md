@@ -9,6 +9,8 @@ A JavaScript library for building user interfaces.
 
 ## Notes
 
+The first version of these notes are based on [Fullstack Open course](https://fullstackopen.com/en/)
+
 Components accept arbitrary inputs \(called “props”\) and return React elements describing what should appear on the screen.
 
 React embraces that rendering logic is coupled with other UI logic: State changes, event handling and how the data is prepared for rendering.
@@ -48,7 +50,7 @@ function Welcome(props) {
   return <h1>Hello, {props.name}</h1>;
 }
 
-<Welcome name="Bob" /> //Will return "Hello, Bob" 
+<Welcome name="Bob" /> //Will return "Hello, Bob"
 <Welcome name="Alice" /> //Will return "Hello, Alice"
 ```
 
@@ -60,17 +62,19 @@ We can use destructuring to assign variable names to props since `props` is an o
 
 ```javascript
 const Component = (props) => {
-  const [name, age] = props 
+  const [name, age] = props
   // The rest of the component...
 }
 ```
+
 Instead of calling `props.name` or `props.age`, we can call `name` or `age`.
 
 ```javascript
-const AnotherComponent = ({name, age}) => {
+const AnotherComponent = ({ name, age }) => {
   // Component...
 }
 ```
+
 Another way is to assign the values of the properties directly to variables by destructuring the `props` object that is passed to the component function as a parameter.
 
 ### Component helper functions
@@ -97,29 +101,46 @@ const AddMiddleName = (props) => {
 We can add state to our app using React's [state hook.](https://reactjs.org/docs/hooks-state.html)
 
 ```javascript
-import React, { useState } from 'react' // Import useState function
-import ReactDOM from 'react-dom'
+import React, { useState } from "react" // Import useState function
+import ReactDOM from "react-dom"
 
 const App = () => {
-  const [ counter, setCounter ] = useState(0) 
-  setTimeout(    () => setCounter(counter + 1),    1000  )
-  return (
-    <div>{counter}</div>
-  )
+  const [counter, setCounter] = useState(0)
+  setTimeout(() => setCounter(counter + 1), 1000)
+  return <div>{counter}</div>
 }
 
-ReactDOM.render(
-  <App />, 
-  document.getElementById('root')
-)
+ReactDOM.render(<App />, document.getElementById("root"))
 ```
 
 Example taken from [Fullstack Open.](https://fullstackopen.com/en/part1/component_state_event_handlers)
 In this example, `counter` variable is assigned to the initial value of the state. `setCounter` is assigned to the function that will be used to modify the state.
 
+### Event handling
+
+Using JSX we pass a function as event handler instead of a string
+
+```javascript
+<button onClick={someFunction}>Cool button</button>
+```
+
+In React we must call `preventDefault` explicitly.
+
+```javascript
+function Hello() {
+  function handleClick(e) {
+    // Function that is going to be passed into the click event
+    e.preventDefault()
+    console.log("You clicked!")
+  }
+  return <button onClick={handleClick}>Click Me!</button>
+}
+```
+
+Defining an event handler within JSX templates is not a good idea.
+
 ## Resources
 
-[React Website](https://reactjs.org/) 
+[React Website](https://reactjs.org/)
 
 [What is React?](https://www.youtube.com/watch?v=1wZoGFF_oi4&list=PLZlA0Gpn_vH_NT5zPVp18nGe_W9LqBDQK): Video from Web Dev Simplified explaining what is react and why you should learn it.
-

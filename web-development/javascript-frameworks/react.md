@@ -17,6 +17,8 @@ React embraces that rendering logic is coupled with other UI logic: State change
 
 React uses babel under the hood to convert JSX into regular JavaScript.
 
+**You should never mutate the state directly.** The changes of the state has to be done by setting the state to a new object.
+
 ### JSX
 
 Is a syntax extension to JavaScript. JSX produces React "Elements".

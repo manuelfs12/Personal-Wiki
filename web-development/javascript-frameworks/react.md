@@ -118,6 +118,25 @@ ReactDOM.render(<App />, document.getElementById("root"))
 Example taken from [Fullstack Open.](https://fullstackopen.com/en/part1/component_state_event_handlers)
 In this example, `counter` variable is assigned to the initial value of the state. `setCounter` is assigned to the function that will be used to modify the state.
 
+### Rules of hooks
+
+You should only call `useState` and `useEffect` in a function defining component.
+
+```javascript
+const App = () => {
+  // This is ok
+  const [age, setAge] = useState(0)
+
+  // Anything else is illegal
+  if (someCondition) {
+    const [x, setX] = useState(0)
+  }
+  const someFunction = () => {
+    const [y, setY] = useState(false)
+  }
+}
+```
+
 ### Event handling
 
 Using JSX we pass a function as event handler instead of a string
@@ -140,6 +159,28 @@ function Hello() {
 ```
 
 Defining an event handler within JSX templates is not a good idea.
+
+We need to always pass a **function** to the event handler.
+
+```javascript
+function FooComponent() {
+  const [value, setValue] = useState(0)
+  function handleClick() {
+    // Cool function for the click
+  }
+  return (
+    <div>
+      // This is valid
+      <button onClick={handleClick}>Click Me!</button>
+      <button onClick={() => setValue(0)}>button</button>
+      <button onClick={() => console.log("Hello")}>button</button>
+      // This is ilegal
+      <button onClick={console.log("Hello")}>button</button>
+      <button onClick={setValue(0)}>button</button>
+    </div>
+  )
+}
+```
 
 ## Resources
 
